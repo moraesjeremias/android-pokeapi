@@ -1,2 +1,2 @@
 include ':app'
-rootProject.name = "Android PokeApi"
+rootProject.name = "PokeApi"
