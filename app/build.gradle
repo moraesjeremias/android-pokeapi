@@ -42,6 +42,10 @@ dependencies {
     implementation "org.jetbrains.kotlinx:kotlinx-serialization-json:$kotlinxSerialization"
     implementation "io.ktor:ktor-client-android:$ktorVersion"
     implementation "io.ktor:ktor-client-core:$ktorVersion"
+    implementation "io.insert-koin:koin-android:$koinVersion"
+    implementation "io.insert-koin:koin-android-ext:$koinVersion"
+    implementation "io.insert-koin:koin-androidx-workmanager:$koinVersion"
+    implementation "io.insert-koin:koin-androidx-compose:$koinVersion"
     testImplementation 'junit:junit:4.+'
     androidTestImplementation 'androidx.test.ext:junit:1.1.2'
     androidTestImplementation 'androidx.test.espresso:espresso-core:3.3.0'

@@ -3,6 +3,7 @@ buildscript {
     ext.kotlinVersion = "1.4.32"
     ext.kotlinxSerialization = "1.1.0"
     ext.ktorVersion = "1.5.2"
+    ext.koinVersion = "3.0.1-beta-1"
     repositories {
         google()
         jcenter()
