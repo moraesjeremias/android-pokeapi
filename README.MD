@@ -19,15 +19,15 @@ A simple android project using PokeApi
 
 ## Milestones
 
-[ ] Init Android Project
+[x] Init Android Project
 
-[ ] Adding Dependencies
+[x] Adding Dependencies
 
-[ ] Create Fragments and Views
+[] Create Fragments and Views
 
-[ ] Organize classes under MVVM architecture
+[] Organize classes under MVVM architecture
 
-[ ] Unit Testing
+[] Unit Testing
 
 
 
