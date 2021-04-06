@@ -7,6 +7,9 @@ buildscript {
         koinVersion = "3.0.1-beta-1"
         kotlinxCoroutines = "1.3.9"
         kotEnv = "6.2.2"
+        jetPackComposeBeta = "1.0.0-beta03"
+        activityAlpha = "1.3.0-alpha05"
+        viewModelAlpha = "1.0.0-alpha03"
     }
     repositories {
         google()
