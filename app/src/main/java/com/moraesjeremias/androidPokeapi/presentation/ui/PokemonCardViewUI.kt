@@ -3,6 +3,8 @@ package com.moraesjeremias.androidPokeapi.presentation.ui
 import androidx.compose.foundation.Image
 import androidx.compose.foundation.background
 import androidx.compose.foundation.layout.*
+import androidx.compose.foundation.lazy.LazyColumn
+import androidx.compose.foundation.lazy.items
 import androidx.compose.foundation.shape.RoundedCornerShape
 import androidx.compose.material.Card
 import androidx.compose.material.Text
@@ -20,17 +22,17 @@ import com.moraesjeremias.androidPokeapi.domain.Pokemon
 
 @Composable
 fun CardList(pokemonList: List<Pokemon>) {
-        Column(
-            horizontalAlignment = Alignment.CenterHorizontally,
-            verticalArrangement = Arrangement.SpaceAround,
-            modifier = Modifier
-                .fillMaxWidth()
-        ) {
-            pokemonList.map { pokemon ->
-                PokemonCard(pokemon)
-                Spacer(modifier = Modifier.size(50.dp))
+            LazyColumn(
+                horizontalAlignment = Alignment.CenterHorizontally,
+                verticalArrangement = Arrangement.SpaceAround,
+                modifier = Modifier
+                    .fillMaxWidth()
+            ) {
+                items(pokemonList){ pokemon ->
+                    PokemonCard(pokemon = pokemon)
+                    Spacer(modifier = Modifier.size(50.dp))
+                }
             }
-        }
 }
 
 @Composable

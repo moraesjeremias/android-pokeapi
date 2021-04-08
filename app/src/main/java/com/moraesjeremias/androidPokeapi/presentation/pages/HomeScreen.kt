@@ -16,11 +16,7 @@ import com.moraesjeremias.androidPokeapi.presentation.ui.PokemonLogo
 
 
 @Composable
-@Preview
-fun PokemonHome(){
-    val pokemonList = listOf(
-        Pokemon("1", "Joteon", listOf(PokemonTypeEnum.ELECTRIC), artWork = ""),
-        Pokemon("2", "Mew", listOf(PokemonTypeEnum.ELECTRIC, PokemonTypeEnum.ROCK, PokemonTypeEnum.WATER), artWork = ""))
+fun PokemonHomeScreen(pokemonList: List<Pokemon>){
     Scaffold {
         Column(horizontalAlignment = Alignment.CenterHorizontally) {
             PokemonLogo()
