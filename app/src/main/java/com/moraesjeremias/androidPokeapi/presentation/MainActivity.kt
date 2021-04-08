@@ -4,16 +4,21 @@ import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import androidx.activity.compose.setContent
 import com.moraesjeremias.androidPokeapi.R
-import com.moraesjeremias.androidPokeapi.core.utils.koinModule
-import com.moraesjeremias.androidPokeapi.data.api.KtorClient
-import com.moraesjeremias.androidPokeapi.data.api.PokeApi
-import com.moraesjeremias.androidPokeapi.presentation.pages.PokemonHome
+import com.moraesjeremias.androidPokeapi.core.utils.di.koinModule
+import com.moraesjeremias.androidPokeapi.core.utils.di.viewModelKoinModule
+import com.moraesjeremias.androidPokeapi.data.repository.PokemonRepository
+import com.moraesjeremias.androidPokeapi.domain.Pokemon
+import com.moraesjeremias.androidPokeapi.presentation.pages.PokemonHomeScreen
+import com.moraesjeremias.androidPokeapi.presentation.viewModel.PokemonHomeViewModel
 import kotlinx.coroutines.runBlocking
 import org.koin.android.ext.android.inject
 import org.koin.core.context.startKoin
 
 
 class MainActivity : AppCompatActivity() {
+    private val repository by inject<PokemonRepository>()
+    private val pokemonHomeViewModel by inject<PokemonHomeViewModel>()
+
     override fun onCreate(savedInstanceState: Bundle?) {
         setTheme(R.style.Theme_PokeApiSplashScreen)
         Thread.sleep(1000)
@@ -21,15 +26,14 @@ class MainActivity : AppCompatActivity() {
 
         super.onCreate(savedInstanceState)
         startKoin {
-            modules(koinModule)
+            modules(listOf(koinModule, viewModelKoinModule))
         }
-        val client by inject<KtorClient>()
-        val pokeApi = PokeApi(client)
+        lateinit var pokemons: List<Pokemon>
         runBlocking {
-            pokeApi.getPokemonList(offset = 1)
+            pokemons = pokemonHomeViewModel.getPokemons(1)
         }
         setContent {
-            PokemonHome()
+            PokemonHomeScreen(pokemons)
         }
 
 
