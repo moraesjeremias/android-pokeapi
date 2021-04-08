@@ -7,7 +7,6 @@ import com.moraesjeremias.androidPokeapi.R
 import com.moraesjeremias.androidPokeapi.core.utils.koinModule
 import com.moraesjeremias.androidPokeapi.data.api.KtorClient
 import com.moraesjeremias.androidPokeapi.data.api.PokeApi
-import com.moraesjeremias.androidPokeapi.databinding.ActivityMainBinding
 import com.moraesjeremias.androidPokeapi.presentation.pages.PokemonHome
 import kotlinx.coroutines.runBlocking
 import org.koin.android.ext.android.inject
@@ -16,7 +15,6 @@ import org.koin.core.context.startKoin
 
 class MainActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
-        val binding = ActivityMainBinding.inflate(layoutInflater)
         setTheme(R.style.Theme_PokeApiSplashScreen)
         Thread.sleep(1000)
         setTheme(R.style.Theme_AndroidPokeApi)
