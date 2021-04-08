@@ -73,6 +73,8 @@ dependencies {
     implementation "androidx.compose.material:material-icons-extended:$jetPackComposeBeta"
     implementation "androidx.activity:activity-compose:$activityAlpha"
     implementation "androidx.lifecycle:lifecycle-viewmodel-compose:$viewModelAlpha"
+    implementation "androidx.compose.compiler:compiler:$jetPackComposeBeta"
+    implementation "androidx.compose.runtime:runtime:$jetPackComposeBeta"
     implementation "androidx.compose.runtime:runtime-livedata:$jetPackComposeBeta"
     implementation "androidx.compose.runtime:runtime-rxjava2:$jetPackComposeBeta"
     androidTestImplementation "androidx.compose.ui:ui-test-junit4:$jetPackComposeBeta"
