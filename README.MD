@@ -6,6 +6,12 @@ A simple android project using PokeApi
 ### IDE Configs
 * Download Kotlin's plugin latest version for Android Studio.
 
+* Download Android Studio Canary Release
+
+> JetPack Compose suits best while coding at Android Studio Canary Release Versions, specially for @Preview components!
+
+> Follow along JetPack Compose [docs](https://developer.android.com/jetpack/compose/setup)
+
 
 ## Technologies used
 * Kotlin
@@ -14,7 +20,9 @@ A simple android project using PokeApi
 
 * Ktor
 
-* Android View Binding
+* Koin
+
+* JetPack Compose
 
 
 ## Milestones
@@ -23,9 +31,11 @@ A simple android project using PokeApi
 
 - [x] Adding Dependencies
 
-- [ ] Create Fragments and Views
+- [x] Create JetPack UI Components and Views
 
-- [ ] Organize classes under MVVM architecture
+- [ ] Implement Infinite Scroll View
+
+- [ ] Organize classes under MVVM architecture (WIP)
 
 - [ ] Unit Testing
 
