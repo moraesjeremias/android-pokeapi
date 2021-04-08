@@ -1,7 +1,7 @@
 package com.moraesjeremias.androidPokeapi.domain
 
 import androidx.compose.ui.graphics.Color
-import com.moraesjeremias.androidPokeapi.R
+import com.moraesjeremias.androidPokeapi.core.utils.colors.*
 import com.moraesjeremias.androidPokeapi.data.models.PokemonModel
 
 
@@ -16,7 +16,7 @@ fun transformModelToDomain(pokemonModel: PokemonModel) =
     with(pokemonModel){
         Pokemon(
             id = id,
-            name = name,
+            name = name.capitalize(),
             type = getTypesList(pokemonModel),
             artWork = sprites.spriteType.artwork.imageURL
         )
@@ -30,24 +30,24 @@ fun getTypesList(pokemonModel: PokemonModel): List<PokemonTypeEnum> =
 
 
 enum class PokemonTypeEnum(val color: Color, val inverseColor: Color, val description: String) {
-    GRASS(color = Color.Green, inverseColor=Color.White, description = "grass"),
-    POISON(color = Color.Green, inverseColor=Color.White, description = "poison"),
-    FIRE(color = Color.Red, inverseColor=Color.White, description = "fire"),
-    FLYING(color = Color.Cyan, inverseColor=Color.White, description = "flying"),
-    WATER(color = Color.Blue, inverseColor=Color.White, description = "water"),
-    BUG(color = Color.LightGray, inverseColor=Color.White, description = "bug"),
-    NORMAL(color = Color.White, inverseColor=Color.White, description = "normal"),
-    ELECTRIC(color = Color.Yellow, inverseColor=Color.Black, description = "electric"),
-    GROUND(color = Color.DarkGray, inverseColor=Color.White, description = "ground"),
-    FAIRY(color = Color.White, inverseColor=Color.White, description = "fairy"),
-    FIGHTING(color = Color.Gray, inverseColor=Color.White, description = "fighting"),
-    PSYCHIC(color = Color.Magenta, inverseColor=Color.White, description = "psychic"),
-    ROCK(color = Color(R.color.purple_500), inverseColor= Color.White, description = "rock"),
-    STEEL(color = Color.Gray, inverseColor=Color.White, description = "steel"),
-    ICE(color = Color.Cyan, inverseColor=Color.White, description = "ice"),
-    GHOST(color = Color(R.color.purple_500), inverseColor=Color.White, description = "ghost"),
-    DRAGON(color = Color.White, inverseColor=Color.White, description = "dragon"),
-    DARK(color = Color.Black, inverseColor=Color.White, description = "dark");
+    GRASS(color = grassTypeColor, inverseColor=Color.White, description = "grass"),
+    POISON(color = poisonTypeColor, inverseColor=Color.White, description = "poison"),
+    FIRE(color = fireTypeColor, inverseColor=Color.White, description = "fire"),
+    FLYING(color = flyingTypeColor, inverseColor=Color.White, description = "flying"),
+    WATER(color = waterTypeColor, inverseColor=Color.White, description = "water"),
+    BUG(color = bugTypeColor, inverseColor=Color.White, description = "bug"),
+    NORMAL(color = normalType, inverseColor=Color.White, description = "normal"),
+    ELECTRIC(color = eletricTypeColor, inverseColor=Color.Black, description = "electric"),
+    GROUND(color = groundTypeColor, inverseColor=Color.White, description = "ground"),
+    FAIRY(color = fairyTypeColor, inverseColor=Color.White, description = "fairy"),
+    FIGHTING(color = fightingTypeColor, inverseColor=Color.White, description = "fighting"),
+    PSYCHIC(color = psychicTypeColor, inverseColor=Color.White, description = "psychic"),
+    ROCK(color = rockTypeColor, inverseColor= Color.White, description = "rock"),
+    STEEL(color = steelTypeColor, inverseColor=Color.White, description = "steel"),
+    ICE(color = iceTypeColor, inverseColor=Color.White, description = "ice"),
+    GHOST(color = ghostTypeColor, inverseColor=Color.White, description = "ghost"),
+    DRAGON(color = dragonTypeColor, inverseColor=Color.White, description = "dragon"),
+    DARK(color = darkTypeColor, inverseColor=Color.White, description = "dark");
 
 
 
