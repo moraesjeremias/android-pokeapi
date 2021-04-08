@@ -1,3 +1,4 @@
 <resources>
     <string name="app_name">Android PokeApi</string>
+    <string name="pokeapi_logo">PokeApi Logo</string>
 </resources>
