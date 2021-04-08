@@ -1,5 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
+    <!--  System Colors  -->
     <color name="purple_200">#FFBB86FC</color>
     <color name="purple_500">#FF6200EE</color>
     <color name="purple_700">#FF3700B3</color>
@@ -7,9 +8,28 @@
     <color name="teal_700">#FF018786</color>
     <color name="black">#FF000000</color>
     <color name="white">#FFFFFFFF</color>
-    <color name="red_pokeapi_splash_screen">#F44336</color>
     <color name="light_blue_400">#FF29B6F6</color>
     <color name="light_blue_600">#FF039BE5</color>
     <color name="gray_400">#FFBDBDBD</color>
     <color name="gray_600">#FF757575</color>
+
+    <!-- Pokemon Colors -->
+    <color name="red_pokeapi_splash_screen">#F44336</color>
+    <color name="water_type">#4F93DB</color>
+    <color name="bug_type">#8CB22F</color>
+    <color name="poison_type">#A248CC</color>
+    <color name="ghost_type">#A248CC</color>
+    <color name="eletric_type">#F3D061</color>
+    <color name="ground_type">#DE7747</color>
+    <color name="fighting_type">#EB4A70</color>
+    <color name="ice_type">#60CEBF</color>
+    <color name="grass_type">#63B556</color>
+    <color name="fire_type">#EE8130</color>
+    <color name="flying_type">#738FC7</color>
+    <color name="psychic_type">#F95587</color>
+    <color name="rock_type">#A16E00</color>
+    <color name="dragon_type">#6F35FC</color>
+    <color name="dark_type">#362D27</color>
+    <color name="steel_type">#9E9EB8</color>
+    <color name="fairy_type">#F0A5CA</color>
 </resources>
