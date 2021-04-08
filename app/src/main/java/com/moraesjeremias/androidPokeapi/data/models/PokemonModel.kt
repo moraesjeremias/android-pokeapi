@@ -4,7 +4,7 @@ import kotlinx.serialization.SerialName
 import kotlinx.serialization.Serializable
 
 @Serializable
-data class Pokemon(
+data class PokemonModel(
     val id: String,
     val name: String,
     val sprites: SpriteType,
