@@ -1,4 +1,4 @@
-package com.moraesjeremias.androidPokeapi.presentation.widgets
+package com.moraesjeremias.androidPokeapi.presentation.ui
 
 import androidx.compose.foundation.Image
 import androidx.compose.foundation.background
@@ -19,13 +19,11 @@ import com.moraesjeremias.androidPokeapi.R
 import com.moraesjeremias.androidPokeapi.domain.Pokemon
 
 @Composable
-
 fun CardList(pokemonList: List<Pokemon>) {
         Column(
             horizontalAlignment = Alignment.CenterHorizontally,
             verticalArrangement = Arrangement.SpaceAround,
             modifier = Modifier
-                .padding(vertical = 10.dp)
                 .fillMaxWidth()
         ) {
             pokemonList.map { pokemon ->
@@ -41,6 +39,9 @@ fun PokemonCard(pokemon: Pokemon) {
         elevation = 4.dp,
         backgroundColor = Color.White,
         shape = RoundedCornerShape(18.dp),
+        modifier = Modifier
+            .height(100.dp)
+            .fillMaxWidth(0.9F)
     ) {
         Row {
             Image(
@@ -49,7 +50,6 @@ fun PokemonCard(pokemon: Pokemon) {
                 alignment = Alignment.Center,
                 modifier = Modifier.padding(start = 10.dp)
             )
-
             Column(
                 Modifier
                     .padding(all = 8.dp)
