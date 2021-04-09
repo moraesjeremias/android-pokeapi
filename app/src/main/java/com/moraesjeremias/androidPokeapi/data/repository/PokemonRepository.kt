@@ -1,10 +1,10 @@
 package com.moraesjeremias.androidPokeapi.data.repository
 
-import com.moraesjeremias.androidPokeapi.data.api.PokeApi
+import com.moraesjeremias.androidPokeapi.data.api.PokeApiService
 
 class PokemonRepository(
-    private val pokeApi: PokeApi
+    private val pokeApiService: PokeApiService
 ) {
     suspend fun listPokemons(offset: Int)=
-        pokeApi.getPokemonList(offset)
+        pokeApiService.getPokemonList(offset)
 }

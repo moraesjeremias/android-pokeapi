@@ -6,7 +6,6 @@ import androidx.activity.compose.setContent
 import com.moraesjeremias.androidPokeapi.R
 import com.moraesjeremias.androidPokeapi.core.utils.di.koinModule
 import com.moraesjeremias.androidPokeapi.core.utils.di.viewModelKoinModule
-import com.moraesjeremias.androidPokeapi.data.repository.PokemonRepository
 import com.moraesjeremias.androidPokeapi.domain.Pokemon
 import com.moraesjeremias.androidPokeapi.presentation.pages.PokemonHomeScreen
 import com.moraesjeremias.androidPokeapi.presentation.viewModel.PokemonHomeViewModel
@@ -17,7 +16,6 @@ import org.koin.core.context.startKoin
 
 
 class MainActivity : AppCompatActivity() {
-    private val repository by inject<PokemonRepository>()
     private val pokemonHomeViewModel by inject<PokemonHomeViewModel>()
 
     @ExperimentalCoroutinesApi
@@ -25,30 +23,22 @@ class MainActivity : AppCompatActivity() {
         setTheme(R.style.Theme_PokeApiSplashScreen)
         Thread.sleep(1000)
         setTheme(R.style.Theme_AndroidPokeApi)
-
         super.onCreate(savedInstanceState)
         startKoin {
             modules(listOf(koinModule, viewModelKoinModule))
         }
+
+        //  TODO: REMOVE THIS GAMBITO IN FUTURE RELEASES
         lateinit var pokemons: List<Pokemon>
         runBlocking {
-            pokemonHomeViewModel.getPokemons(pokemonHomeViewModel.offsetState.value)
+            getPokemonsGambitoVersion()
         }
         setContent {
             PokemonHomeScreen(pokemonHomeViewModel)
         }
-
-
     }
 
-    override fun onResume() {
-        super.onResume()
-        if (pokemonHomeViewModel.offsetState.value == 11){
-            runBlocking {
-                pokemonHomeViewModel.getPokemons(pokemonHomeViewModel.offsetState.value)
-            }
-        }
-    }
-
-
+//  TODO: REMOVE THIS EXTREME GAMBITO IN FUTURE RELEASES
+    private suspend fun getPokemonsGambitoVersion() =
+        pokemonHomeViewModel.getPokemons(pokemonHomeViewModel.offsetState.value)
 }

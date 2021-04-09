@@ -8,7 +8,7 @@ import kotlinx.coroutines.awaitAll
 import kotlinx.coroutines.coroutineScope
 
 
-class PokeApi(
+class PokeApiService(
     private val ktorClient: KtorClient
 ) {
 
@@ -19,7 +19,7 @@ class PokeApi(
         return ktorClient.httpClient.get(url.build())
     }
 
-    suspend fun getPokemonList(offset: Int, limit: Int = 9): List<PokemonModel>{
+    suspend fun getPokemonList(offset: Int, limit: Int = 39): List<PokemonModel>{
         val pokemonIDList = offset..offset.plus(limit)
         val pokemonList = pokemonIDList.map { pokeId ->
             coroutineScope {
