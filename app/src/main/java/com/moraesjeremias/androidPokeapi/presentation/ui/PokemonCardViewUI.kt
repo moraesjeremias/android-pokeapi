@@ -4,7 +4,7 @@ import androidx.compose.foundation.Image
 import androidx.compose.foundation.background
 import androidx.compose.foundation.layout.*
 import androidx.compose.foundation.lazy.LazyColumn
-import androidx.compose.foundation.lazy.items
+import androidx.compose.foundation.lazy.itemsIndexed
 import androidx.compose.foundation.shape.RoundedCornerShape
 import androidx.compose.material.Card
 import androidx.compose.material.Text
@@ -19,16 +19,23 @@ import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
 import com.moraesjeremias.androidPokeapi.R
 import com.moraesjeremias.androidPokeapi.domain.Pokemon
+import com.moraesjeremias.androidPokeapi.presentation.viewModel.PokemonHomeViewModel
+import kotlinx.coroutines.ExperimentalCoroutinesApi
 
 @Composable
-fun CardList(pokemonList: List<Pokemon>) {
+@ExperimentalCoroutinesApi
+fun CardList(pokemonHomeViewModel: PokemonHomeViewModel) {
+    val pokemonList = pokemonHomeViewModel.pokemonListState.value
+    val offset = pokemonHomeViewModel.offsetState.value
+
+    print("This is offsetState: $offset")
             LazyColumn(
                 horizontalAlignment = Alignment.CenterHorizontally,
-                verticalArrangement = Arrangement.SpaceAround,
+                verticalArrangement = Arrangement.SpaceEvenly,
                 modifier = Modifier
                     .fillMaxWidth()
             ) {
-                items(pokemonList){ pokemon ->
+                itemsIndexed(items = pokemonList){index, pokemon ->
                     PokemonCard(pokemon = pokemon)
                     Spacer(modifier = Modifier.size(50.dp))
                 }
