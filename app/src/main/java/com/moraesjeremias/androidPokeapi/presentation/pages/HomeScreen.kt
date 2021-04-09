@@ -27,7 +27,7 @@ import kotlinx.coroutines.withContext
 @ExperimentalCoroutinesApi
 @Composable
 fun PokemonHomeScreen(pokemonHomeViewModel: PokemonHomeViewModel){
-    Scaffold(floatingActionButton = { Fab(pokemonHomeViewModel) }, floatingActionButtonPosition = FabPosition.End) {
+    Scaffold() {
         Column(horizontalAlignment = Alignment.CenterHorizontally) {
             PokemonLogo()
             Spacer(modifier = Modifier.size(10.dp))
@@ -35,20 +35,5 @@ fun PokemonHomeScreen(pokemonHomeViewModel: PokemonHomeViewModel){
         }
     }
 }
-
-@Composable
-fun Fab(pokemonHomeViewModel: PokemonHomeViewModel) =
-    with(pokemonHomeViewModel){
-
-        FloatingActionButton(
-            onClick = {
-                runBlocking {
-                    getPokemons(offsetState.value)
-
-                } },
-            backgroundColor = Color.White){
-            Icons.Filled.Favorite
-        }
-    }
 
 

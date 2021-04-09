@@ -29,7 +29,7 @@ data class SpriteType(
 
 @Serializable
 data class PokemonSpriteType(
-    @SerialName("dream_world")
+    @SerialName("official-artwork")
     val artwork: PokemonArtwork
 )
 
